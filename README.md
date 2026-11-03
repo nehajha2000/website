@@ -19,4 +19,4 @@ The site is plain static HTML, so it needs no build step.
 - **GitHub Pages:** Settings → Pages → Deploy from branch → `main` / root. The `CNAME` file sets the custom domain.
 - **Any static host** (GoDaddy cPanel, Netlify, Vercel): upload or connect the repository root.
 
-Role-specific links quietly reorder the projects: `#product`, `#operations`, `#founders-office`.
+Role-specific links quietly reorder the case studies: `#growth`, `#product`, `#operations`, `#founders-office`.

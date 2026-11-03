@@ -7,7 +7,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Neha Jha: 15 projects across credit, sales, HR, procurement and plant operations, turning messy business problems into systems teams use.">
 <meta property="og:title" content="Neha Jha | Strategy, Product & Operations">
-<meta property="og:description" content="15 projects across 8 companies, from credit co-pilots to 3D product models.">
+<meta property="og:description" content="Strategy, growth and AI adoption: case studies with live demos, from a credit co-pilot to 3D product models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -266,6 +266,49 @@ button.avatar:hover .av-play,button.avatar:focus-visible .av-play{transform:scal
 .vm-close{font:inherit;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 16px}
 .vm video{width:100%;max-height:calc(100dvh - 110px);aspect-ratio:16/9;background:#000;border-radius:14px;display:block}
 
+
+/* Hero video card */
+.hero-video{position:relative;display:block;width:100%;padding:0;border:0;cursor:pointer;border-radius:20px;overflow:hidden;aspect-ratio:16/10;max-width:100%;background:var(--teal-2);box-shadow:0 30px 70px rgba(0,0,0,.3);font:inherit;text-align:left}
+.hero-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.hero-video:hover img{transform:scale(1.04)}
+.hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,39,44,.85),rgba(6,39,44,0) 55%)}
+.hv-play{position:absolute;left:22px;bottom:22px;z-index:2;width:58px;height:58px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.hv-play::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:ping 2.4s ease-out infinite}
+.hv-cap{position:absolute;left:96px;bottom:24px;z-index:2;display:grid;gap:2px;color:#fff}
+.hv-cap b{font-family:var(--display);font-size:22px}
+.hv-cap span{font-size:14px;color:rgba(255,255,255,.8)}
+/* Case studies: list + detail */
+.cases{background:var(--surface);border-block:1px solid var(--line)}
+.cs{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:28px;align-items:start}
+.cs-list{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));max-height:calc(100vh - 110px);max-height:calc(100dvh - 110px);overflow:auto;display:grid;gap:8px;padding-right:6px}
+.cs-item{text-align:left;font:inherit;cursor:pointer;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--ink);display:grid;gap:3px;transition:border-color .2s,background .2s}
+.cs-item:hover{border-color:var(--accent)}
+.cs-item small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.cs-item b{font-size:15.5px;font-weight:600;line-height:1.3}
+.cs-item .ci-roi{font-size:13.5px;color:var(--muted)}
+.cs-item .ci-roi s{color:var(--strike)}
+.cs-item .ci-roi em{font-style:normal;font-weight:700;color:var(--accent)}
+.cs-item[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.cs-item[aria-selected="true"] small,.cs-item[aria-selected="true"] .ci-roi{color:var(--on-teal-muted)}
+.cs-item[aria-selected="true"] .ci-roi em{color:var(--mint)}
+.cs-detail{min-width:0;display:grid;gap:18px}
+.cs-meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.cs-head h3{font-size:clamp(26px,2.6vw,34px);line-height:1.15;color:var(--ink);margin:6px 0 10px}
+.cs-sum{font-size:17.5px;line-height:1.6;max-width:42em}
+.roi-label{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:-8px}
+.roi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.roi-tile{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:4px;min-width:0}
+.roi-tile .rv{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05;color:var(--ink)}
+.roi-tile .rf{font-size:13.5px;color:var(--muted)}
+.roi-tile .rf s{color:var(--strike);text-decoration:none;background:linear-gradient(currentColor,currentColor) no-repeat 0 56%/0% 1.5px;transition:background-size .6s ease .15s}
+.roi.on .roi-tile .rf s{background-size:100% 1.5px}
+.roi-tile .rl{font-size:14.5px;line-height:1.4;color:var(--ink)}
+.cs-demo{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
+.cs-demo-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;background:var(--teal);color:var(--on-teal);font-weight:600}
+.cs-open{font-size:14px;font-weight:600;text-decoration:none;color:var(--on-teal);border:1.5px solid rgba(255,255,255,.3);border-radius:10px;padding:7px 14px}
+.cs-open:hover{border-color:var(--on-teal)}
+.cs-demo .stage-how{padding:14px 20px}
+
 /* Method */
 .method{background:var(--surface);border-block:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
@@ -315,6 +358,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (max-width:1000px){
   .hero-grid,.head,.career,.contact-box{grid-template-columns:minmax(0,1fr);gap:32px}
   .grid,.qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cs{grid-template-columns:minmax(0,1fr)}
+  .cs-list{position:static;max-height:none;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 6px}
+  .cs-item{flex:0 0 240px;scroll-snap-align:start}
   .about-grid{grid-template-columns:minmax(0,1fr);gap:56px}
   .about-photo{max-width:380px}
   .demos{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -328,6 +374,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (max-width:640px){
   body{font-size:16px}
   .featured,.grid,.qgrid,.steps{grid-template-columns:minmax(0,1fr)}
+  .roi{grid-template-columns:minmax(0,1fr)}
+  .roi-tile{grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:baseline}
+  .roi-tile .rv{font-size:26px;grid-row:span 2}
+  .hv-play{width:50px;height:50px;left:16px;bottom:16px}
+  .hv-cap{left:80px;bottom:18px}
+  .hv-cap b{font-size:18px}
   .demos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-left:-2px}
   .demo{flex:0 0 210px;scroll-snap-align:start}
   .stage-bar,.stage-how{padding-left:16px;padding-right:16px}
@@ -349,7 +401,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .lval{font-size:19px}
   .pitch{min-height:0}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.marquee-track{flex-wrap:wrap;width:auto;row-gap:8px}.marquee-track span[aria-hidden]{display:none}.av-play::after,.pp-icon::after{display:none}.tile img.show{animation:none;transform:none}.bubble::after{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.marquee-track{flex-wrap:wrap;width:auto;row-gap:8px}.marquee-track span[aria-hidden]{display:none}.av-play::after,.pp-icon::after,.hv-play::after{display:none}.tile img.show{animation:none;transform:none}.bubble::after{display:none}}
 </style>
 </head>
 <body>
@@ -360,8 +412,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <a class="brand" href="#top">Neha Jha<span>.</span></a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#play">Try it live</a>
-      <a href="#work">Projects</a>
+      <a href="#cases">Case studies</a>
       <a href="#method">How I work</a>
       <a href="#room">In the room</a>
       <a href="#career">Career</a>
@@ -384,30 +435,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p class="bubble" id="hi-text">Hi, I'm Neha. Thanks for stopping by!</p>
         </div>
         <h1>I take messy business problems and turn them into systems teams actually use.</h1>
-        <p class="pitch">I went from the COO's Office of a billion-dollar enterprise to 0→1 work because I love building from scratch. My work sits between strategy and execution. I find what's slowing a team down, agree the fix with the people who own it, build the tool and stay until it's used. So far that's <b>15 projects across 8 companies</b>, from a loan co-pilot to 3D product models.</p>
+        <p class="pitch">I went from the COO's Office of a billion-dollar enterprise to 0→1 work because I love building from scratch. My work sits between strategy and execution. I find what's slowing a team down, agree the fix with the people who own it, build the tool and stay until it's used. I also help companies grow and scale: sharpening <b>go-to-market, channel and pricing strategy</b>, and building the sales and customer systems that make growth repeatable.</p>
         <div class="hero-links">
-          <button type="button" class="btn btn-accent" data-intro><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch my intro <span class="btn-sub">3 min</span></button>
-          <a class="btn btn-ghost" href="#play">Try the live models</a>
-          <a class="btn btn-ghost" href="#work">See the projects</a>
+          <a class="btn btn-accent" href="#cases">Explore the case studies</a>
+          <button type="button" class="btn btn-ghost" data-intro><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch my intro <span class="btn-sub">3 min</span></button>
           <a class="btn btn-ghost" href="https://linkedin.com/in/nehajha2000" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <aside class="ledger" id="ledger" aria-live="polite">
-        <div class="ledger-head"><span>Before → after, from my projects</span><b>15 projects</b></div>
-        <div id="ledger-rows"></div>
-      </aside>
+      <button type="button" class="hero-video" data-intro aria-label="Play Neha's 3-minute intro video">
+        <img src="video/neha-intro-poster.jpg" alt="">
+        <span class="hv-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+        <span class="hv-cap"><b>My story in 3 minutes</b><span>Books, numbers and rooms</span></span>
+      </button>
     </div>
   </section>
-
-  <div class="facts band">
-    <div class="wrap facts-row">
-      <div class="fact"><b class="num">15</b><span>projects shipped</span></div>
-      <div class="fact"><b class="num">8</b><span>companies</span></div>
-      <div class="fact"><b class="num">12</b><span>business functions</span></div>
-      <span class="lbl2">Teams I've trained</span>
-    </div>
-    <div class="wrap marquee"><div class="marquee-track" id="marquee"></div></div>
-  </div>
 
   <section class="block band about" id="about">
     <div class="wrap about-grid">
@@ -436,37 +477,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section class="block band play" id="play">
+  <section class="block band cases" id="cases">
     <div class="wrap">
       <div class="head">
-        <h2>Try it live</h2>
-        <p>These are the working tools from my projects, not screenshots. Pick one and use it: spin a machine, run an incentive scheme or watch AI appraise a loan file. All data shown is synthetic.</p>
+        <h2>Case studies</h2>
+        <p>Each one started with a team that was stuck. Pick a case to see the return it delivered, then use the working tool yourself. All data in the demos is synthetic.</p>
       </div>
-      <div class="demos" id="demos" role="tablist" aria-label="Live demos"></div>
-      <div class="stage">
-        <div class="stage-bar">
-          <div><div class="stage-client" id="st-client"></div><h3 id="st-title"></h3></div>
-          <a class="stage-open" id="st-open" href="#work" target="_blank" rel="noopener">Open the full case study</a>
+      <div class="cs">
+        <div class="cs-list" id="cs-list" role="tablist" aria-label="Case studies"></div>
+        <div class="cs-detail" id="cs-detail" role="tabpanel" aria-labelledby="cs-title">
+          <div class="cs-head">
+            <div class="cs-meta" id="cs-meta"></div>
+            <h3 id="cs-title"></h3>
+            <p class="cs-sum" id="cs-sum"></p>
+          </div>
+          <div class="roi-label">Return on the project</div>
+          <div class="roi" id="cs-roi"></div>
+          <div class="tags" id="cs-tags"></div>
+          <div class="cs-demo">
+            <div class="cs-demo-bar"><span id="cs-demo-label">Live demo</span><a class="cs-open" id="cs-open" href="#cases" target="_blank" rel="noopener">Open the full case study</a></div>
+            <p class="stage-how" id="cs-how"></p>
+            <div class="stage-frame" id="st-frame"><div class="stage-ph" id="st-ph">The live demo loads when you scroll here.</div></div>
+          </div>
         </div>
-        <p class="stage-how" id="st-how"></p>
-        <div class="stage-frame" id="st-frame" role="tabpanel" aria-labelledby="st-title"><div class="stage-ph" id="st-ph">The live model loads when you scroll here.</div></div>
       </div>
-    </div>
-  </section>
-
-  <section class="block band" id="work">
-    <div class="wrap">
-      <div class="head">
-        <h2 id="work-title">Projects</h2>
-        <p id="work-sub">Every project started with a team that was stuck. Each card shows the main before-and-after result. Open one to see the full interactive case study.</p>
-      </div>
-      <div class="tools" role="group" aria-label="Filter by area">
-        <span class="lbl">Area</span>
-        <div id="filters" style="display:contents"></div>
-      </div>
-      <div class="featured" id="featured"></div>
-      <div class="grid" id="grid"></div>
-      <p class="foot">Projects delivered as a consultant at Havish M Consulting. Figures are indicative, as published in each client case study.</p>
+      <p class="foot">Delivered as a consultant at Havish M Consulting. Client names are withheld; figures are indicative, as published in each case study.</p>
     </div>
   </section>
 
@@ -474,7 +509,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="head">
         <h2>How I work</h2>
-        <p>The same five steps run through every project above, whether the team is in a credit office, a cable factory or an LPG bottling plant.</p>
+        <p>The same five steps run through every case study above, whether the team is in a credit office, a cable factory or an LPG bottling plant.</p>
       </div>
       <div class="steps">
         <div class="step"><span class="n">Step 1</span><h3>Discover</h3><p>Ride along with the team and baseline the real numbers before proposing anything.</p></div>
@@ -597,6 +632,7 @@ var LENS = {
     pitch:"Founder's offices need someone who can pick up any problem on Monday and have it moving by Friday. I've worked across <b>credit, sales, HR, procurement and plant operations</b>, and each time I found the lever, got leadership to agree the rules and shipped something the team used within weeks."},
   "product": {name:"product", title:"Projects for a product role",
     pitch:"I build internal products people actually adopt. I start with the user's real day, <b>scope narrow to earn trust</b>, ship in a format they already know and then track usage. Examples: a sales agent used weekly by 72% of reps, and a credit co-pilot that doubled underwriter capacity."},
+  "growth": {name:"growth"}, "gtm": {name:"gtm"},
   "operations": {name:"operations", title:"Projects for an operations or program role",
     pitch:"I turn messy processes into systems with <b>owners, cadences and dashboards</b>. That covers cutting a 6-day incentive run to 2 hours, and making 48 plant SOPs easy to follow on the floor. Every rollout came with a pilot, a runbook and a named owner."}
 };
@@ -696,7 +732,29 @@ var P = [
 ];
 var AREA = {"Credit":"Credit","HR":"HR & talent","Sales":"Sales & customers","Buying":"Sales & customers","Customer experience":"Sales & customers","Robotics sales":"Sales & customers","Merchandising":"Sales & customers"};
 function area(p){return AREA[p.fn] || "Operations & manufacturing";}
-var KEY = {"all":"all","founders-office":"f","product":"p","operations":"o"};
+
+/* growth relevance (0-3) for the hidden #growth / #gtm link */
+var G = {"pnb-credit-copilot":2,"welspun-dealer-incentives":3,"rrkabel-sales-agent":3,"rrkabel-engineered-bom":1,"landmark-markdown":3,"amber-rfq-prototype":3,"landmark-succession":1,"sterlite-talent-tracker":1,"bpcl-dynamic-sop":1,"bpcl-safety-videos":1,"hindi-work-instructions":1,"kraheja-3d-enclosure":2,"welspun-store-3d":3,"amber-gantry-3d":3,"landmark-sla-nps":3};
+P.forEach(function(p){ p.s.g = G[p.id] || 1; });
+/* return on each project: v = result, f = starting point, l = what it measures */
+var ROI = {
+ "pnb-credit-copilot":[{v:"40 min",f:"3.5 h",l:"to draft a credit appraisal memo"},{v:"2×",l:"files per underwriter per day, same team"},{v:"−30%",l:"files sent back to branch"}],
+ "welspun-dealer-incentives":[{v:"98%",f:"114%",l:"incentive payout vs budget, full year"},{v:"₹2.4",f:"₹1.3",l:"incremental margin per ₹1 of incentive"},{v:"2 hours",f:"6 working days",l:"to run quarter-close incentives"}],
+ "rrkabel-sales-agent":[{v:"30 sec",f:"~4 h",l:"to answer a field rep's product query"},{v:"72%",l:"of field reps using it weekly by week 12"},{v:"−58%",l:"calls escalated to the product team"}],
+ "rrkabel-engineered-bom":[{v:"4.8%",l:"material buy avoided vs manual BOMs"},{v:"30 min",f:"1.5 days",l:"to build a BOM for a new SKU"},{v:"98.6%",f:"93.1%",l:"BOM accuracy vs actual consumption"}],
+ "landmark-markdown":[{v:"+2.1 pts",l:"gross margin on clearance options"},{v:"−35%",l:"season-end leftover stock"},{v:"30 min",f:"~3 days",l:"to build a markdown plan"}],
+ "amber-rfq-prototype":[{v:"94%",f:"61%",l:"quotes submitted on time"},{v:"14 wks",f:"22 wks",l:"from RFQ to first prototype"},{v:"2 days",f:"10 days",l:"from RFQ to customer-ready concept"}],
+ "landmark-succession":[{v:"71%",f:"42%",l:"critical roles with a ready successor"},{v:"3 wks",f:"~9 wks",l:"talent review cycle"},{v:"−70%",l:"calibration prep time"}],
+ "sterlite-talent-tracker":[{v:"2 days",f:"~3 wks",l:"to prepare the talent review pack"},{v:"89%",l:"leaders with a named successor"},{v:"30+",l:"data fields on every leader's scorecard"}],
+ "bpcl-dynamic-sop":[{v:"−42%",l:"SOP-related audit observations, pilot plants"},{v:"2 days",f:"~3 wks",l:"to update an SOP on the floor"},{v:"48",l:"SOPs turned into living diagrams"}],
+ "bpcl-safety-videos":[{v:"1 day",f:"~6 wks",l:"to produce each safety video"},{v:"10",l:"core plant hazards covered"},{v:"2",l:"languages, English and Hindi"}],
+ "hindi-work-instructions":[{v:"Hindi",l:"narrated work instructions for the shop floor"},{v:"6",l:"voices tested; most accurate one chosen"},{v:"100%",l:"offline, no cloud voice services needed"}],
+ "kraheja-3d-enclosure":[{v:"−58%",l:"snags at handover"},{v:"3.2 h",f:"~6.5 h",l:"install time per enclosure"},{v:"15 min",f:"2 days",l:"bill of materials per tower"}],
+ "welspun-store-3d":[{v:"8 days",f:"21 days",l:"to layout sign-off"},{v:"23",l:"layout issues caught before build"},{v:"2 days",f:"2–3 wks",l:"floor plan to walkable 3D"}],
+ "amber-gantry-3d":[{v:"18",f:"5",l:"customer demos per month"},{v:"3 days",f:"~5 wks",l:"spec sheet to interactive model"},{v:"80 KB",l:"one file that opens on any phone"}],
+ "landmark-sla-nps":[{v:"100%",l:"customer comments mapped to an SLA, with evidence"},{v:"8 of 15",l:"on-time deliveries that still felt slow"},{v:"4 of 6",l:"SLA dimensions found breached"}]
+};
+var KEY = {"all":"all","founders-office":"f","product":"p","operations":"o","growth":"g","gtm":"g"};
 
 var $ = function(id){return document.getElementById(id);};
 var state = {lens:"all", fn:"All"};
@@ -707,10 +765,6 @@ var strikeIO = ("IntersectionObserver" in window && !reduceMotion) ? new Interse
 function observeStrikes(){
   document.querySelectorAll(".card:not(.on),.lrow:not(.on)").forEach(function(el){ if (strikeIO) strikeIO.observe(el); else el.classList.add("on"); });
 }
-(function marquee(){
-  var names = ["EY","Bharat Petroleum","Coca-Cola","Zydus","DS Group","Mahindra Finance","ReNew Power","NASSCOM","Punjab Development Commission","SRCC","Clix Capital","Addverb"];
-  $("marquee").innerHTML = names.map(function(n){return '<span>'+n+'</span>';}).join("") + names.map(function(n){return '<span aria-hidden="true">'+n+'</span>';}).join("");
-})();
 (function typeHello(){
   var el = $("hi-text"), full = el.textContent;
   if (reduceMotion) return;
@@ -830,41 +884,63 @@ var DEMOS = [
 function demoById(id){ for (var i=0;i<DEMOS.length;i++) if (DEMOS[i].id===id) return DEMOS[i]; return null; }
 function projById(id){ for (var i=0;i<P.length;i++) if (P[i].id===id) return P[i]; return null; }
 var play = {current:null, picked:false, visible:false, frame:null};
-function demoOrder(){
-  var k = KEY[state.lens], list = DEMOS.slice();
-  if (k !== "all") list.sort(function(a,b){ return projById(b.id).s[k]-projById(a.id).s[k]; });
+var WOW = DEMOS.map(function(d){return d.id;}).concat(["hindi-work-instructions"]);
+function caseOrder(){
+  var k = KEY[state.lens];
+  var list = WOW.map(projById).filter(Boolean);
+  if (k !== "all") list.sort(function(a,b){ return (b.s[k]||0)-(a.s[k]||0); });
   return list;
 }
-function renderDemoTabs(){
-  $("demos").innerHTML = demoOrder().map(function(d){
-    var p = projById(d.id);
-    return '<button type="button" role="tab" class="demo" id="demo-'+d.id+'" data-demo="'+d.id+'" aria-selected="'+(d.id===play.current)+'"><b>'+esc(d.verb)+'</b><span>'+esc(p.client)+' · '+esc(d.kind)+'</span></button>';
+function renderCaseList(){
+  $("cs-list").innerHTML = caseOrder().map(function(p){
+    return '<button type="button" role="tab" class="cs-item" id="ci-'+p.id+'" data-case="'+p.id+'" aria-selected="'+(p.id===play.current)+'">'+
+      '<small>'+esc(p.client)+' · '+esc(p.fn)+'</small><b>'+esc(p.title)+'</b>'+
+      '<span class="ci-roi"><s>'+esc(p.from)+'</s> → <em>'+esc(p.to)+'</em> '+esc(p.what)+'</span></button>';
   }).join("");
 }
 function loadFrame(){
   if (!play.visible || !play.current) return;
   var d = demoById(play.current), box = $("st-frame");
+  if (!d){ if (play.frame){ play.frame.remove(); play.frame = null; } return; }
   var src = "projects/"+d.id+".html#play"+(d.keep ? "="+d.keep : "");
   if (play.frame && play.frame.dataset.src === src) return;
   if (play.frame) play.frame.remove();
-  $("st-ph").hidden = false; $("st-ph").textContent = "Loading "+d.verb.toLowerCase()+"…";
+  $("st-ph").hidden = false; $("st-ph").textContent = "Loading the live demo…";
   var f = document.createElement("iframe");
   f.title = d.verb + " (live demo)"; f.setAttribute("allow","fullscreen"); f.setAttribute("allowfullscreen","");
   f.dataset.src = src; f.dataset.page = d.id+".html"; f.src = src;
   f.addEventListener("load", function(){ $("st-ph").hidden = true; });
   box.appendChild(f); play.frame = f;
 }
-function selectDemo(id, byUser){
-  var d = demoById(id); if (!d) return;
+function selectCase(id, byUser){
+  var p = projById(id); if (!p) return;
   if (byUser) play.picked = true;
   play.current = id;
-  var p = projById(id);
-  $("st-client").textContent = p.client + " · " + d.kind;
-  $("st-title").textContent = d.verb;
-  $("st-how").textContent = d.how;
-  $("st-open").href = "projects/"+id+".html";
-  document.querySelectorAll("[data-demo]").forEach(function(b){ b.setAttribute("aria-selected", b.dataset.demo===id ? "true":"false"); });
+  var d = demoById(id), k = KEY[state.lens];
+  $("cs-meta").textContent = p.client + " · " + p.fn;
+  $("cs-title").textContent = p.title;
+  $("cs-sum").textContent = p.a[k === "g" ? "f" : k] || p.a.all;
+  var roi = $("cs-roi"); roi.classList.remove("on");
+  roi.innerHTML = (ROI[id]||[]).map(function(m){
+    return '<div class="roi-tile"><span class="rv num">'+esc(m.v)+'</span>'+(m.f ? '<span class="rf">from <s>'+esc(m.f)+'</s></span>' : '<span class="rf">&nbsp;</span>')+'<span class="rl">'+esc(m.l)+'</span></div>';
+  }).join("");
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ roi.classList.add("on"); }); });
+  $("cs-tags").innerHTML = p.tags.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("");
+  if (d){
+    $("cs-demo-label").textContent = "Live demo · " + d.verb;
+    $("cs-how").textContent = d.how;
+    $("cs-open").hidden = false; $("cs-open").href = "projects/"+id+".html";
+    $("st-frame").hidden = false;
+  } else {
+    $("cs-demo-label").textContent = "How it was built";
+    $("cs-how").textContent = p.a.p + " " + p.a.o;
+    $("cs-open").hidden = true; $("st-frame").hidden = true;
+  }
+  document.querySelectorAll("[data-case]").forEach(function(b){ b.setAttribute("aria-selected", b.dataset.case===id ? "true":"false"); });
   loadFrame();
+  if (byUser && window.matchMedia("(max-width:1000px)").matches){
+    $("cs-detail").scrollIntoView({behavior: reduceMotion ? "auto" : "smooth", block:"start"});
+  }
 }
 window.addEventListener("message", function(e){
   var m = e.data;
@@ -872,66 +948,19 @@ window.addEventListener("message", function(e){
   play.frame.style.height = Math.max(420, Math.min(m.h + 8, 2600)) + "px";
   $("st-ph").hidden = true;
 });
-$("demos").addEventListener("click", function(e){ var b = e.target.closest("[data-demo]"); if (b) selectDemo(b.dataset.demo, true); });
-document.addEventListener("click", function(e){
-  var b = e.target.closest(".try"); if (!b) return;
-  selectDemo(b.dataset.play, true);
-  document.getElementById("play").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
-});
+$("cs-list").addEventListener("click", function(e){ var b = e.target.closest("[data-case]"); if (b) selectCase(b.dataset.case, true); });
 if ("IntersectionObserver" in window){
   new IntersectionObserver(function(es, obs){ es.forEach(function(en){ if (en.isIntersecting){ play.visible = true; loadFrame(); obs.disconnect(); } }); }, {rootMargin:"300px"}).observe($("st-frame"));
 } else { play.visible = true; }
 
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
-
-function ordered(){
-  var k = KEY[state.lens];
-  var list = P.slice();
-  if (k !== "all") list.sort(function(a,b){return b.s[k]-a.s[k];});
-  return list;
-}
-function bigNum(p){return '<s>'+esc(p.from)+'</s><span class="arrow" aria-hidden="true">→</span>'+esc(p.to);}
-function card(p, feat){
-  var k = KEY[state.lens], hasDemo = !!demoById(p.id);
-  var acts = p.nolink ? '<span class="read">Case study coming soon</span>' :
-    '<div class="acts">'+(hasDemo?'<button type="button" class="try" data-play="'+p.id+'">Try it live</button>':'')+
-    '<a class="read" href="projects/'+p.id+'.html" target="_blank" rel="noopener">Read the case study</a></div>';
-  return '<div class="card'+(feat?' feat':'')+(p.nolink?' nolink':'')+'">'+
-    '<div class="top"><b>'+esc(p.client)+'</b><span>'+esc(p.fn)+'</span></div>'+
-    '<h3>'+esc(p.title)+'</h3>'+
-    '<div class="big num">'+bigNum(p)+'</div><div class="big-lbl">'+esc(p.what)+'</div>'+
-    '<p class="angle">'+esc(p.a[k])+'</p>'+
-    '<div class="tags">'+p.tags.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</div>'+
-    acts+'</div>';
-}
-function renderFilters(){
-  var fns = ["All","Sales & customers","Operations & manufacturing","HR & talent","Credit"];
-  $("filters").innerHTML = fns.map(function(f,i){return '<button type="button" class="fbtn" id="fn-'+i+'" data-fn="'+esc(f)+'" aria-pressed="'+(f===state.fn)+'">'+esc(f)+'</button>';}).join("");
-  $("filters").querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){state.fn=b.dataset.fn;renderFilters();renderWork();});});
-}
-function renderWork(){
-  var list = ordered();
-  if (state.fn !== "All"){ list = list.filter(function(p){return area(p)===state.fn;}); $("featured").innerHTML=""; $("grid").innerHTML=list.map(function(p){return card(p,false);}).join(""); observeStrikes(); return; }
-  $("featured").innerHTML = list.slice(0,6).map(function(p){return card(p,true);}).join("");
-  $("grid").innerHTML = list.slice(6).map(function(p){return card(p,false);}).join("");
-  observeStrikes();
-}
-function renderLedger(animate){
-  var rows = ordered().filter(function(p){return !p.nolink && p.id!=="landmark-sla-nps";}).slice(0,5);
-  $("ledger-rows").innerHTML = rows.map(function(p,i){
-    return '<a class="lrow" href="projects/'+p.id+'.html" target="_blank" rel="noopener"><span class="lwhat">'+esc(p.what.charAt(0).toUpperCase()+p.what.slice(1))+'<small>'+esc(p.client)+'</small></span><span class="lval num"><s style="transition-delay:'+(0.5+i*0.22)+'s">'+esc(p.from)+'</s><span class="arrow" aria-hidden="true">→</span>'+esc(p.to)+'</span></a>';
-  }).join("");
-  observeStrikes();
-  var l = $("ledger"); l.classList.remove("swap"); if (animate){ void l.offsetWidth; l.classList.add("swap"); }
-}
-function setLens(lens, animate){
+function setLens(lens){
   if (!LENS[lens]) lens = "all";
   state.lens = lens;
-  renderLedger(animate); renderWork();
-  if (!play.picked) play.current = demoOrder()[0].id;
-  renderDemoTabs(); selectDemo(play.current, false);
+  if (!play.picked) play.current = caseOrder()[0].id;
+  renderCaseList(); selectCase(play.current, false);
 }
-window.addEventListener("hashchange", function(){ var h = location.hash.slice(1); if (LENS[h]) setLens(h, true); });
+window.addEventListener("hashchange", function(){ var h = location.hash.slice(1); if (LENS[h]) setLens(h); });
 
 $("copy-email").addEventListener("click", function(){
   var t = $("email").textContent, btn = this;
@@ -1033,9 +1062,8 @@ document.addEventListener("keydown", function(e){
   v.addEventListener("ended", function(){ setTimeout(close, 1200); });
 })();
 
-renderFilters();
 var start = location.hash.slice(1);
-setLens(LENS[start] ? start : "all", false);
+setLens(LENS[start] ? start : "all");
 })();
 </script>
 
