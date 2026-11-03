@@ -324,6 +324,15 @@ button.avatar:hover .av-play,button.avatar:focus-visible .av-play{transform:scal
 .gi-v s{font-size:.5em;font-weight:500;color:rgba(255,255,255,.5);margin-right:6px;text-decoration-thickness:2px}
 .gi-l{font-size:15.5px;line-height:1.45;color:var(--on-teal-muted)}
 
+
+/* testimonial logos */
+.voices .qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.voices .qgrid{grid-template-columns:minmax(0,1fr)}}
+.q-logo{align-self:flex-start;display:inline-flex;align-items:center;height:48px;padding:8px 14px;border-radius:10px;background:#fff}
+.q-logo img{height:32px;width:auto;display:block}
+.q-word{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.02em;color:#1d2a52}
+.q .org2 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+
 /* Method */
 .method{background:var(--surface);border-block:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
@@ -640,9 +649,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p>From leaders whose teams I worked with.</p>
       </div>
       <div class="qgrid">
-        <figure class="q"><blockquote>Conducted a workshop on AI. Enabled teams to become more productive, innovative and impactful. Remarkable trainer and mentor.</blockquote><figcaption><div class="who">Amrut Medhekar</div><div class="org2">President India Business, Wockhardt</div></figcaption></figure>
-        <figure class="q"><blockquote>Finance team was really happy with the Gen AI workshop and is looking forward to automating their tasks.</blockquote><figcaption><div class="who">Ojaswin Singh</div><div class="org2">Promoter's Office, Amber Industries</div></figcaption></figure>
-        <figure class="q"><blockquote>Insightful and engaging workshop on GenAI. The sessions helped us in aligning our perspectives and on leveraging AI across operations.</blockquote><figcaption><div class="who">Asad Equbal Khan</div><div class="org2">General Manager, BMTC</div></figcaption></figure>
+        <figure class="q"><span class="q-logo q-word">WOCKHARDT</span><blockquote>Conducted a workshop on AI. Enabled teams to become more productive, innovative and impactful. Remarkable trainer and mentor.</blockquote><figcaption><div class="who">Amrut Medhekar</div><div class="org2">President India Business, Wockhardt</div></figcaption></figure>
+        <figure class="q"><span class="q-logo"><img src="img/logo-bmtc.png" alt="Bahri &amp; Mazroei logo" style="height:40px"></span><blockquote>Insightful and engaging workshop on GenAI. The sessions helped us in aligning our perspectives and on leveraging AI across operations.</blockquote><figcaption><div class="who">Asad Equbal Khan</div><div class="org2">General Manager, <a href="https://bahrimazroei.com/" target="_blank" rel="noopener">Bahri &amp; Mazroei</a>, UAE</div></figcaption></figure>
+        <figure class="q"><span class="q-logo q-word">awfis</span><blockquote>Thanks for your inputs and insights in the session. Looking forward to working on the use cases together.</blockquote><figcaption><div class="who">Senior Product Manager</div><div class="org2">AWFIS</div></figcaption></figure>
+        <figure class="q"><span class="q-logo"><img src="img/logo-amber.png" alt="Amber logo"></span><blockquote>Finance team was really happy with the Gen AI workshop and is looking forward to automating their tasks.</blockquote><figcaption><div class="who">Ojaswin Singh</div><div class="org2">Promoter's Office, Amber Industries</div></figcaption></figure>
       </div>
     </div>
   </section>
