@@ -309,6 +309,21 @@ button.avatar:hover .av-play,button.avatar:focus-visible .av-play{transform:scal
 .cs-open:hover{border-color:var(--on-teal)}
 .cs-demo .stage-how{padding:14px 20px}
 
+
+/* Growth impact */
+.growth{background:var(--teal);color:var(--on-teal)}
+.growth .head h2{color:var(--on-teal)}
+.growth .head p{color:var(--on-teal-muted)}
+.growth .foot{color:var(--on-teal-muted)}
+.gi-group{margin-bottom:34px}
+.gi-h{font-size:15px;font-family:var(--sans);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);margin-bottom:14px}
+.gi-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gi-row.gi-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gi{background:var(--teal-2);border:1px solid rgba(127,214,194,.18);border-radius:16px;padding:22px 22px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.gi-v{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1;color:var(--on-teal)}
+.gi-v s{font-size:.5em;font-weight:500;color:rgba(255,255,255,.5);margin-right:6px;text-decoration-thickness:2px}
+.gi-l{font-size:15.5px;line-height:1.45;color:var(--on-teal-muted)}
+
 /* Method */
 .method{background:var(--surface);border-block:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
@@ -359,6 +374,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .hero-grid,.head,.career,.contact-box{grid-template-columns:minmax(0,1fr);gap:32px}
   .grid,.qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cs{grid-template-columns:minmax(0,1fr)}
+  .gi-row.gi-4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cs-list{position:static;max-height:none;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 6px}
   .cs-item{flex:0 0 240px;scroll-snap-align:start}
   .about-grid{grid-template-columns:minmax(0,1fr);gap:56px}
@@ -375,6 +391,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   body{font-size:16px}
   .featured,.grid,.qgrid,.steps{grid-template-columns:minmax(0,1fr)}
   .roi{grid-template-columns:minmax(0,1fr)}
+  .gi-row,.gi-row.gi-4{grid-template-columns:minmax(0,1fr)}
   .roi-tile{grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:baseline}
   .roi-tile .rv{font-size:26px;grid-row:span 2}
   .hv-play{width:50px;height:50px;left:16px;bottom:16px}
@@ -412,6 +429,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <a class="brand" href="#top">Neha Jha<span>.</span></a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
+      <a href="#growth">Growth</a>
       <a href="#cases">Case studies</a>
       <a href="#method">How I work</a>
       <a href="#room">In the room</a>
@@ -435,7 +453,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p class="bubble" id="hi-text">Hi, I'm Neha. Thanks for stopping by!</p>
         </div>
         <h1>I take messy business problems and turn them into systems teams actually use.</h1>
-        <p class="pitch">I went from the COO's Office of a billion-dollar enterprise to 0→1 work because I love building from scratch. My work sits between strategy and execution. I find what's slowing a team down, agree the fix with the people who own it, build the tool and stay until it's used. I also drive growth. Over the last two years I've <b>converted 80% of my CXO pitches into clients</b> and managed <b>nearly $0.5M in enterprise accounts</b>, owning pricing and commercials end to end. The work I sold delivered growth too, from tripling monthly customer demos to keeping incentive spend on budget while nearly doubling the return on every rupee.</p>
+        <p class="pitch">I went from the COO's Office of a billion-dollar enterprise to 0→1 work because I love building from scratch. My work sits between strategy and execution. I find what's slowing a team down, agree the fix with the people who own it, build the tool and stay until it's used. I also drive growth. Over the last two years I've <b>converted 80% of my CXO pitches into clients</b> and managed <b>nearly $0.5M in enterprise accounts</b>, owning pricing and commercials end to end. The work I sold delivered growth too, from more than tripling monthly customer demos to keeping incentive spend on budget while nearly doubling the return on every rupee.</p>
         <div class="hero-links">
           <a class="btn btn-accent" href="#cases">Explore the case studies</a>
           <button type="button" class="btn btn-ghost" data-intro><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch my intro <span class="btn-sub">3 min</span></button>
@@ -474,6 +492,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <li class="now"><small>Now</small>Enterprise growth &amp; AI adoption</li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <section class="block band growth" id="growth">
+    <div class="wrap">
+      <div class="head">
+        <h2>Growth impact</h2>
+        <p>For two years I led every client conversation myself, from the first CXO pitch through pricing and commercials to delivery. Here's what that added up to.</p>
+      </div>
+      <div class="gi-group">
+        <h3 class="gi-h">Winning and growing accounts</h3>
+        <div class="gi-row">
+          <div class="gi"><span class="gi-v num">80%</span><span class="gi-l">of CXO pitches converted into clients</span></div>
+          <div class="gi"><span class="gi-v num">~$0.5M</span><span class="gi-l">in enterprise accounts managed</span></div>
+          <div class="gi"><span class="gi-v">End to end</span><span class="gi-l">ownership of pricing, commercials and upsell</span></div>
+        </div>
+      </div>
+      <div class="gi-group">
+        <h3 class="gi-h">Growth delivered for clients</h3>
+        <div class="gi-row gi-4">
+          <div class="gi"><span class="gi-v num">3.6&times;</span><span class="gi-l">monthly customer demos, from 5 to 18</span></div>
+          <div class="gi"><span class="gi-v num"><s>61%</s> 94%</span><span class="gi-l">bids submitted on time</span></div>
+          <div class="gi"><span class="gi-v num"><s>114%</s> 98%</span><span class="gi-l">incentive payout vs budget, with nearly 2&times; return per rupee</span></div>
+          <div class="gi"><span class="gi-v num">+2.1 pts</span><span class="gi-l">gross margin on clearance, with 35% less leftover stock</span></div>
+        </div>
+      </div>
+      <p class="foot">Client results are indicative, as published in each case study below.</p>
     </div>
   </section>
 
