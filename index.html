@@ -358,6 +358,26 @@ button.avatar:hover .av-play,button.avatar:focus-visible .av-play{transform:scal
 .skillset dt{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px}
 .skillset dd{margin:0;font-size:15.5px}
 
+/* Watch */
+.watch{background:var(--surface);border-block:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.vcard{margin:0;display:flex;flex-direction:column;gap:14px;min-width:0}
+.vframe{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#06272C;border:1px solid var(--line)}
+.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vplay{all:unset;position:absolute;inset:0;cursor:pointer;display:block}
+.vplay img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.vplay:hover img{transform:scale(1.03)}
+.vplay::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,39,44,0) 45%,rgba(6,39,44,.55))}
+.vplay .pi{position:absolute;left:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .2s ease}
+.vplay:hover .pi{transform:scale(1.08)}
+.vplay .pi::after{content:"";margin-left:5px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff}
+.vplay:focus-visible{outline:3px solid var(--accent);outline-offset:-3px;border-radius:16px}
+.vtag{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.vcard h3{font-size:22px;line-height:1.25;color:var(--ink);margin-top:4px}
+.vcard p{font-size:15.5px;color:var(--muted)}
+.vlink{font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;align-self:flex-start}
+@media (max-width:760px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+
 /* Voices */
 .voices{background:var(--teal);color:var(--on-teal)}
 .voices .head h2{color:var(--on-teal)}
@@ -442,6 +462,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <a href="#cases">Case studies</a>
       <a href="#method">How I work</a>
       <a href="#room">In the room</a>
+      <a href="#watch">Watch</a>
       <a href="#career">Career</a>
       <a class="cta" href="#contact">Get in touch</a>
     </nav>
@@ -620,6 +641,53 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p>Training government officers, leading industry masterclasses and showing up where India's conversation on AI is happening. Tap any photo to see more.</p>
       </div>
       <div class="bento" id="bento"></div>
+    </div>
+  </section>
+
+  <section class="block band watch" id="watch">
+    <div class="wrap">
+      <div class="head">
+        <h2>Watch</h2>
+        <p>Podcasts, tutorials and session recaps from the work at Havish M Consulting. Press play to watch here, or open any video on YouTube.</p>
+      </div>
+      <div class="vgrid">
+        <figure class="vcard">
+          <div class="vframe"><button type="button" class="vplay" data-yt="RZ1woOFQzfA" aria-label="Play: Episode 39: in conversation with Mohit Mathur"><img src="https://i.ytimg.com/vi/RZ1woOFQzfA/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.style.visibility='hidden'"><span class="pi" aria-hidden="true"></span></button></div>
+          <figcaption>
+            <div class="vtag">Podcast</div>
+            <h3>Episode 39: in conversation with Mohit Mathur</h3>
+            <p>A podcast conversation with Mohit Mathur, former EVP HR at NSDC and Sterlite Power.</p>
+          </figcaption>
+          <a class="vlink" href="https://www.youtube.com/watch?v=RZ1woOFQzfA" target="_blank" rel="noopener">Watch on YouTube</a>
+        </figure>
+        <figure class="vcard">
+          <div class="vframe"><button type="button" class="vplay" data-yt="Ctixh50OyTM" aria-label="Play: Connectors in Claude: from an Excel file to a drafted email"><img src="https://i.ytimg.com/vi/Ctixh50OyTM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.style.visibility='hidden'"><span class="pi" aria-hidden="true"></span></button></div>
+          <figcaption>
+            <div class="vtag">Tutorial</div>
+            <h3>Connectors in Claude: from an Excel file to a drafted email</h3>
+            <p>Read an Excel file straight from Google Drive, pull out the insights and draft the email, all in one flow.</p>
+          </figcaption>
+          <a class="vlink" href="https://www.youtube.com/watch?v=Ctixh50OyTM" target="_blank" rel="noopener">Watch on YouTube</a>
+        </figure>
+        <figure class="vcard">
+          <div class="vframe"><button type="button" class="vplay" data-yt="4sJNuHsVMc0" aria-label="Play: Zydus: session recap"><img src="https://i.ytimg.com/vi/4sJNuHsVMc0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.style.visibility='hidden'"><span class="pi" aria-hidden="true"></span></button></div>
+          <figcaption>
+            <div class="vtag">Session recap</div>
+            <h3>Zydus: session recap</h3>
+            <p>Highlights from the session with the Zydus team.</p>
+          </figcaption>
+          <a class="vlink" href="https://www.youtube.com/watch?v=4sJNuHsVMc0" target="_blank" rel="noopener">Watch on YouTube</a>
+        </figure>
+        <figure class="vcard">
+          <div class="vframe"><button type="button" class="vplay" data-yt="Kv0LdROlubM" aria-label="Play: Watch on YouTube"><img src="https://i.ytimg.com/vi/Kv0LdROlubM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.style.visibility='hidden'"><span class="pi" aria-hidden="true"></span></button></div>
+          <figcaption>
+            <div class="vtag">Video</div>
+            <h3 data-yt-title>Watch on YouTube</h3>
+            <p>More from the Havish M Consulting channel.</p>
+          </figcaption>
+          <a class="vlink" href="https://www.youtube.com/watch?v=Kv0LdROlubM" target="_blank" rel="noopener">Watch on YouTube</a>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -1117,6 +1185,24 @@ document.addEventListener("keydown", function(e){
 
 var start = location.hash.slice(1);
 setLens(LENS[start] ? start : "all");
+
+/* Watch: load the YouTube player only when someone presses play */
+document.querySelectorAll(".vplay").forEach(function(b){
+  b.addEventListener("click",function(){
+    var id=b.getAttribute("data-yt"), f=document.createElement("iframe");
+    f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&modestbranding=1";
+    f.title=b.getAttribute("aria-label").replace(/^Play: /,"");
+    f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    f.allowFullscreen=true;
+    b.parentNode.replaceChild(f,b);
+  });
+});
+document.querySelectorAll("[data-yt-title]").forEach(function(h3){
+  var card=h3.closest(".vcard"), btn=card&&card.querySelector(".vplay"); if(!btn) return;
+  fetch("https://noembed.com/embed?url=https://www.youtube.com/watch?v="+btn.getAttribute("data-yt"))
+    .then(function(r){return r.json()}).then(function(d){ if(d&&d.title){h3.textContent=d.title; btn.setAttribute("aria-label","Play: "+d.title);} })
+    .catch(function(){});
+});
 })();
 </script>
 
